@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="screen active" id="screen-password">
+    <div class="card">
+      <div class="corner top-left">❀</div>
+      <div class="corner top-right">❀</div>
+      <div class="corner bottom-left">❀</div>
+      <div class="corner bottom-right">❀</div>
+      <h1>Our Anniversary Date<span class="heart">❤</span></h1>
+      <input type="password" id="pwd" placeholder="Our Anniversary Date My Love" readonly />
+     
+      <div class="keypad-3x4">
+        <button onclick="press(1)">1</button>
+        <button onclick="press(2)">2</button>
+        <button onclick="press(3)">3</button>
+        <button onclick="press(4)">4</button>
+        <button onclick="press(5)">5</button>
+        <button onclick="press(6)">6</button>
+        <button onclick="press(7)">7</button>
+        <button onclick="press(8)">8</button>
+        <button onclick="press(9)">9</button>
+        <button class="clear" onclick="clearInput()">Clear</button>
+        <button onclick="press(0)">0</button>
+        <button class="confirm" onclick="confirmInput()">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="screen" id="screen-countdown">
+    <div id="countdownDisplay">3.0s</div>
+  </div>
+
+ 
+  <div class="screen" id="screen-greeting">
+    <div class="greeting-card">
+      <div class="border-text">I love you I love you I love you</div>
+      <div class="oval">
+        <h1>Happy Anniversary!</h1>
+        <p>presented by Mg Lain Mar</p>
+        <div class="bow">🎀</div>
+      </div>
+      <div class="border-text">I love you I love you I love you</div>
+      <div class="buttons">
+        <button onclick="goToScreen('screen-options')">Next</button>
+        <button onclick="goToScreen('screen-password')">Close</button>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="screen" id="screen-options">
+    <button class="nav-button" onclick="goToScreen('screen-greeting')">Back</button>
+    <div class="options-container">
+      <div class="option" onclick="goToScreen('screen-special-letter')">
+        <div class="icon">📒</div>
+        <div class="label">Today's Special Letter</div>
+      </div>
+      <div class="option" onclick="goToScreen('screen-letter')">
+        <div class="icon">✉️</div>
+        <div class="label">Letter for you</div>
+      </div>
+      <div class="option" onclick="goToScreen('screen-puzzle')">
+        <div class="icon">❤️❤️❤️</div>
+        <div class="label">Mini games</div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="screen" id="screen-letter">
+    <button class="nav-button" onclick="goToScreen('screen-options')">Back</button>
+    <div class="letter-container">
+      <div class="letter-box">
+        <div class="border-text">I love you I love you I love you</div>
+        <h2>Special letter for my beautiful princess</h2>
+        <div id="letterContent" class="letter-content">
+          <button class="read-btn" onclick="showLetter()">Start Reading</button>
+        </div>
+        <div class="border-text">I love you I love you I love you</div>
+      </div>
+      <div class="photo-box">
+        <img src="photo_2025-08-01_23-40-21.jpg" alt="Her photo" />
+      </div>
+    </div>
+  </div>
+     <div class="screen" id="screen-puzzle">
+        <button class="nav-button" onclick="goToScreen('screen-options')">Exit</button>
+        <h1>Puzzle Game</h1>
+        <div class="puzzle-images">
+          <div class="original-image">
+            <img id="originalPhoto" src="photo_2025-08-01_23-40-21.jpg" alt="Original" />
+          </div>
+          <div id="puzzle-board"></div>
+        </div>
+        <div class="controls">
+          <button id="shuffleBtn" onclick="shufflePuzzle()">Shuffle</button>
+          <button id="tryAgainBtn" style="display:none;" onclick="resetPuzzle()">Try Again</button>
+        </div>
+        <div id="message"></div>
+    </div>
+
+ 
+  <div class="screen" id="screen-special-letter">
+    <div class="special-letter-card">
+      <h2>Today's Special Letter</h2>
+      <div class="special-letter-content">
+        <span class="read-only-label">My Love</span>
+        <p>
+          My love, today is a special day just for you. Every heartbeat, every smile, every moment is a celebration of you. Thank you for being my sunshine and my forever. I love you more than words can say.
+        </p>
+      </div>
+      <button class="romantic-btn" onclick="goToScreen('screen-options')">Back to Menu</button>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
