@@ -409,59 +409,64 @@ button:hover,
 }
 
 /* Media query for mobile devices */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   body,
   html {
-    font-size: 0.9em;
-    /* Reduce overall font size */
+    font-size: 0.8em;
+    /* Further reduce overall font size */
   }
 
   .card {
-    width: 90%;
-    /* Make card wider */
-    max-width: 300px;
-    /* Limit maximum width */
-    padding: 20px 15px;
-    /* Reduce padding */
+    width: 95%;
+    /* Make card even wider */
+    max-width: none;
+    /* Remove max-width restriction */
+    padding: 15px 10px;
+    /* Further reduce padding */
+  }
+
+  .card h1 {
+    font-size: 1.6em;
+    /* Reduce heading size */
   }
 
   .keypad-3x4 {
-    gap: 8px;
-    /* Reduce gap between buttons */
-    margin-top: 12px;
-    /* Reduce margin */
+    gap: 6px;
+    /* Further reduce gap between buttons */
+    margin-top: 10px;
+    /* Further reduce margin */
   }
 
   .keypad-3x4 button {
-    padding: 12px 0;
-    /* Reduce button padding */
-    font-size: 1em;
-    /* Reduce font size */
+    padding: 10px 0;
+    /* Further reduce button padding */
+    font-size: 0.9em;
+    /* Further reduce font size */
   }
 
   #countdownDisplay {
-    font-size: 3rem;
-    /* Reduce countdown font size */
-    padding: 30px;
-    /* Reduce padding */
+    font-size: 2.5rem;
+    /* Further reduce countdown font size */
+    padding: 25px;
+    /* Further reduce padding */
   }
 
   .greeting-card {
-    width: 90%;
+    width: 95%;
     /* Adjust card width */
-    max-width: 320px;
-    /* Limit maximum width */
+    max-width: none;
+    /* Remove max-width restriction */
   }
 
   .greeting-card .oval {
-    width: 200px;
+    width: 180px;
     /* Reduce oval width */
-    padding: 30px 15px;
+    padding: 25px 12px;
     /* Reduce padding */
   }
 
   .greeting-card .oval h1 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     /* Reduce heading size */
   }
 
@@ -470,15 +475,20 @@ button:hover,
     /* Stack options vertically */
     align-items: center;
     /* Center items */
-    gap: 20px;
+    gap: 15px;
     /* Adjust gap */
   }
 
   .option {
-    width: 100px;
+    width: 80px;
     /* Reduce option width */
-    height: 140px;
+    height: 120px;
     /* Reduce option height */
+  }
+
+  .option .icon {
+    font-size: 2em;
+    /* Reduce icon size */
   }
 
   .letter-container {
@@ -486,7 +496,7 @@ button:hover,
     /* Stack letter and photo vertically */
     align-items: center;
     /* Center items */
-    padding: 10px;
+    padding: 8px;
     /* Reduce padding */
   }
 
@@ -494,28 +504,28 @@ button:hover,
   .photo-box {
     width: 100%;
     /* Full width */
-    max-width: 90%;
-    /* Limit width */
+    max-width: 100%;
+    /* Remove limit width */
   }
 
   .letter-box h2 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     /* Reduce heading size */
   }
 
   .letter-content {
-    min-height: 200px;
+    min-height: 150px;
     /* Reduce minimum height */
-    padding: 15px;
+    padding: 12px;
     /* Reduce padding */
   }
 
   .special-letter-card {
-    width: 90%;
+    width: 95%;
     /* Adjust card width */
-    max-width: 320px;
-    /* Limit maximum width */
-    padding: 30px 20px;
+    max-width: none;
+    /* Remove max-width restriction */
+    padding: 25px 15px;
     /* Reduce padding */
   }
 
@@ -524,35 +534,34 @@ button:hover,
     /* Stack images vertically */
     align-items: center;
     /* Center items */
-    gap: 20px;
+    gap: 15px;
     /* Adjust gap */
   }
 
   .original-image img {
-    width: 240px;
+    width: 200px;
     /* Reduce image width */
-    height: 240px;
+    height: 200px;
     /* Reduce image height */
   }
 
   #puzzle-board {
-    grid-template-columns: repeat(5, 48px);
+    grid-template-columns: repeat(5, 40px);
     /* Adjust grid size */
-    grid-template-rows: repeat(5, 48px);
+    grid-template-rows: repeat(5, 40px);
     /* Adjust grid size */
-    width: 240px;
+    width: 200px;
     /* Reduce board width */
-    height: 240px;
+    height: 200px;
     /* Reduce board height */
   }
 
   .puzzle-tile {
-    width: 48px;
+    width: 40px;
     /* Reduce tile width */
-    height: 48px;
+    height: 40px;
     /* Reduce tile height */
-    background-size: 240px 240px;
+    background-size: 200px 200px;
     /* Adjust background size */
   }
 }
-
