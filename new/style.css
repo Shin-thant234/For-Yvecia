@@ -1,400 +1,558 @@
-    :root {
-      --romantic-pink: #ffb6c1;
-      --romantic-red: #e74c3c;
-      --romantic-purple: #c084fc;
-      --romantic-white: #fff;
-      --romantic-gold: #ffd700;
-      --romantic-shadow: 0 4px 16px rgba(232,76,60,0.15);
-    }
+/* Root variables */
+:root {
+  --romantic-pink: #ffb6c1;
+  --romantic-red: #e74c3c;
+  --romantic-purple: #c084fc;
+  --romantic-white: #fff;
+  --romantic-gold: #ffd700;
+  --romantic-shadow: 0 4px 16px rgba(232, 76, 60, 0.15);
+}
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
-      background: repeating-linear-gradient(
-        135deg,
-        #ffe4e1,
-        #ffe4e1 20px,
-        #ffccd5 20px,
-        #ffccd5 40px
-      );
-    }
+/* General body and html styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-linear-gradient(135deg, #ffe4e1, #ffe4e1 20px, #ffccd5 20px, #ffccd5 40px);
+}
 
-    .screen {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      box-sizing: border-box;
-    }
-    .screen.active {
-      display: flex;
-    }
-    .nav-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 8px 14px;
-      border: none;
-      border-radius: 5px;
-      background: #e74c3c;
-      color: white;
-      font-size: 0.9em;
-      cursor: pointer;
-    }
+/* Screen styles (general) */
+.screen {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.screen.active {
+  display: flex;
+}
 
-    button,
-    .romantic-btn {
-      background: linear-gradient(90deg, var(--romantic-red), var(--romantic-pink));
-      color: var(--romantic-white);
-      border: none;
-      border-radius: 8px;
-      padding: 14px 28px;
-      font-size: 1.1em;
-      font-family: 'Dancing Script', cursive, Arial, sans-serif;
-      cursor: pointer;
-      box-shadow: var(--romantic-shadow);
-      margin: 10px 0;
-      transition: background 0.3s, transform 0.2s;
-    }
-    button:hover,
-    .romantic-btn:hover {
-      background: linear-gradient(90deg, var(--romantic-gold), var(--romantic-red));
-      transform: scale(1.05);
-    }
+/* Navigation button */
+.nav-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 0.9em;
+  cursor: pointer;
+}
 
-    .card {
-      position: relative;
-      background: #fff;
-      width: 320px;
-      padding: 30px 20px;
-      border: 2px solid #e74c3c;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .corner {
-      position: absolute;
-      font-size: 24px;
-      color: #e74c3c;
-    }
-    .top-left { top: 10px; left: 10px; }
-    .top-right { top: 10px; right: 10px; }
-    .bottom-left { bottom: 10px; left: 10px; }
-    .bottom-right { bottom: 10px; right: 10px; }
+/* Button styles */
+button,
+.romantic-btn {
+  background: linear-gradient(90deg, var(--romantic-red), var(--romantic-pink));
+  color: var(--romantic-white);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 28px;
+  font-size: 1.1em;
+  font-family: 'Dancing Script', cursive, Arial, sans-serif;
+  cursor: pointer;
+  box-shadow: var(--romantic-shadow);
+  margin: 10px 0;
+  transition: background 0.3s, transform 0.2s;
+}
+button:hover,
+.romantic-btn:hover {
+  background: linear-gradient(90deg, var(--romantic-gold), var(--romantic-red));
+  transform: scale(1.05);
+}
 
-    .card h1 {
-      margin: 0 0 10px;
-      font-size: 2em;
-      color: #e74c3c;
-      display: inline-flex;
-      align-items: center;
-    }
-    .card .heart {
-      margin-left: 8px;
-      font-size: 1.2em;
-      color: #e74c3c;
-    }
-    .card input[type="password"] {
-      width: 80%;
-      padding: 10px;
-      margin: 20px auto;
-      font-size: 1em;
-      border: 2px solid #e74c3c;
-      border-radius: 5px;
-      text-align: center;
-      caret-color: #e74c3c;
-      outline: none;
-    }
-    .keypad {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-    .keypad button {
-      padding: 15px 0;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #fff;
-      background: #e74c3c;
-    }
-    .keypad .clear { background: #f39c12; }
-    .keypad .confirm { background: #2ecc71; }
+/* Card styles */
+.card {
+  position: relative;
+  background: #fff;
+  width: 320px;
+  padding: 30px 20px;
+  border: 2px solid #e74c3c;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.corner {
+  position: absolute;
+  font-size: 24px;
+  color: #e74c3c;
+}
+.top-left {
+  top: 10px;
+  left: 10px;
+}
+.top-right {
+  top: 10px;
+  right: 10px;
+}
+.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
 
+.card h1 {
+  margin: 0 0 10px;
+  font-size: 2em;
+  color: #e74c3c;
+  display: inline-flex;
+  align-items: center;
+}
+.card .heart {
+  margin-left: 8px;
+  font-size: 1.2em;
+  color: #e74c3c;
+}
+.card input[type='password'] {
+  width: 80%;
+  padding: 10px;
+  margin: 20px auto;
+  font-size: 1em;
+  border: 2px solid #e74c3c;
+  border-radius: 5px;
+  text-align: center;
+  caret-color: #e74c3c;
+  outline: none;
+}
 
-    .keypad-3x4 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-    .keypad-3x4 button {
-      padding: 18px 0;
-      font-size: 1.3em;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      color: #fff;
-      background: linear-gradient(90deg, #e74c3c, #ffb6c1);
-      box-shadow: 0 2px 8px rgba(232,76,60,0.12);
-      transition: background 0.3s, transform 0.2s;
-    }
-    .keypad-3x4 button:hover {
-      background: linear-gradient(90deg, #ffd700, #e74c3c);
-      transform: scale(1.05);
-    }
-    .keypad-3x4 .clear {
-      background: #f39c12;
-    }
-    .keypad-3x4 .confirm {
-      background: #2ecc71;
-    }
+/* Keypad styles */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.keypad button {
+  padding: 15px 0;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background: #e74c3c;
+}
+.keypad .clear {
+  background: #f39c12;
+}
+.keypad .confirm {
+  background: #2ecc71;
+}
 
-   
-    #countdownDisplay {
-      font-size: 4rem;
-      background: #fff;
-      padding: 40px;
-      border-radius: 20px;
-      border: 4px solid #e74c3c;
-      color: #e74c3c;
-    }
+/* Keypad 3x4 styles */
+.keypad-3x4 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.keypad-3x4 button {
+  padding: 18px 0;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(90deg, #e74c3c, #ffb6c1);
+  box-shadow: 0 2px 8px rgba(232, 76, 60, 0.12);
+  transition: background 0.3s, transform 0.2s;
+}
+.keypad-3x4 button:hover {
+  background: linear-gradient(90deg, #ffd700, #e74c3c);
+  transform: scale(1.05);
+}
+.keypad-3x4 .clear {
+  background: #f39c12;
+}
+.keypad-3x4 .confirm {
+  background: #2ecc71;
+}
 
-   
-    .greeting-card {
-      background: white;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      width: 400px;
-      position: relative;
-    }
-    .greeting-card .oval {
-      margin: 20px auto;
-      padding: 40px 20px;
-      width: 260px;
-      background: white;
-      border-radius: 50% / 25%;
-      box-shadow: inset 0 0 0 8px #ffe4e1;
-    }
-    .greeting-card .oval h1 {
-      margin: 0;
-      font-size: 2.2em;
-      color: #e74c3c;
-    }
-    .greeting-card .oval p {
-      margin-top: 8px;
-      font-size: 0.9em;
-      color: #2c3e50;
-    }
-    .greeting-card .bow {
-      font-size: 2em;
-      margin-top: 10px;
-    }
-    .greeting-card .border-text {
-      color: #e74c3c;
-      font-size: 0.9em;
-      margin: 10px 0;
-    }
-    .greeting-card .buttons button {
-      margin: 10px;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background: #e74c3c;
-      color: white;
-      font-size: 1em;
-      cursor: pointer;
-    }
+/* Countdown display styles */
+#countdownDisplay {
+  font-size: 4rem;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  border: 4px solid #e74c3c;
+  color: #e74c3c;
+}
 
-    
-    .keypad,
-    .greeting-card .buttons,
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
+/* Greeting card styles */
+.greeting-card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  position: relative;
+}
+.greeting-card .oval {
+  margin: 20px auto;
+  padding: 40px 20px;
+  width: 260px;
+  background: white;
+  border-radius: 50% / 25%;
+  box-shadow: inset 0 0 0 8px #ffe4e1;
+}
+.greeting-card .oval h1 {
+  margin: 0;
+  font-size: 2.2em;
+  color: #e74c3c;
+}
+.greeting-card .oval p {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #2c3e50;
+}
+.greeting-card .bow {
+  font-size: 2em;
+  margin-top: 10px;
+}
+.greeting-card .border-text {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin: 10px 0;
+}
+.greeting-card .buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #e74c3c;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+}
 
-    
-    .screen#screen-options {
-      background: repeating-linear-gradient(
-        to bottom,
-        #ffccdd,
-        #ffccdd 30px,
-        #ffc0cb 30px,
-        #ffc0cb 60px
-      );
-    }
-    .options-container {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-    .option {
-      background: white;
-      width: 120px;
-      height: 160px;
-      border-radius: 60px / 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      text-align: center;
-    }
-    .option .icon {
-      font-size: 2.5em;
-      margin-bottom: 8px;
-    }
-    .option .label {
-      font-size: 0.9em;
-      color: #2c3e50;
-    }
+/* General keypad and button styles */
+.keypad,
+.greeting-card .buttons,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
 
-    
-    .screen#screen-letter {
-      background: repeating-linear-gradient(
-        135deg,
-        #ffe4e1,
-        #ffe4e1 20px,
-        #ffccd5 20px,
-        #ffccd5 40px
-      );
-    }
-    .letter-container {
-      display: flex;
-      gap: 30px;
-      align-items: flex-start;
-      padding: 20px;
-      max-width: 90%;
-      box-sizing: border-box;
-    }
-    .letter-box, .photo-box {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .letter-box h2 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.8em;
-      color: #e74c3c;
-      margin: 10px 0;
-    }
-    .letter-content {
-      background: #fff;
-      border: 2px dashed #e74c3c;
-      border-radius: 10px;
-      padding: 20px;
-      min-height: 300px;
-      width: 100%;
-      box-sizing: border-box;
-      text-align: left;
-      overflow-y: auto;
-    }
-    .read-btn {
-      background: #e74c3c;
-      color: #fff;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-    }
-    .photo-box img {
-      max-width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .letter-box .border-text {
-      color: #e74c3c;
-      font-size: 0.9em;
-      margin: 8px 0;
-      text-align: center;
-    }
+/* Options screen styles */
+.screen#screen-options {
+  background: repeating-linear-gradient(to bottom, #ffccdd, #ffccdd 30px, #ffc0cb 30px, #ffc0cb 60px);
+}
+.options-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.option {
+  background: white;
+  width: 120px;
+  height: 160px;
+  border-radius: 60px / 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+}
+.option .icon {
+  font-size: 2.5em;
+  margin-bottom: 8px;
+}
+.option .label {
+  font-size: 0.9em;
+  color: #2c3e50;
+}
 
-    
-    .special-letter-card {
-      background: var(--romantic-white);
-      border-radius: 20px;
-      box-shadow: var(--romantic-shadow);
-      padding: 40px 30px;
-      max-width: 400px;
-      text-align: center;
-      border: 2px solid var(--romantic-red);
-    }
-    .special-letter-content {
-      background: var(--romantic-pink);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-      color: var(--romantic-red);
-      font-size: 1.1em;
-      box-shadow: 0 2px 8px rgba(232,76,60,0.08);
-    }
-    .read-only-label {
-      display: block;
-      font-size: 0.95em;
-      color: var(--romantic-gold);
-      margin-bottom: 10px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+/* Letter screen styles */
+.screen#screen-letter {
+  background: repeating-linear-gradient(135deg, #ffe4e1, #ffe4e1 20px, #ffccd5 20px, #ffccd5 40px);
+}
+.letter-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  /* Changed from flex-start to center */
+  padding: 20px;
+  max-width: 90%;
+  box-sizing: border-box;
+}
+.letter-box,
+.photo-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.letter-box h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8em;
+  color: #e74c3c;
+  margin: 10px 0;
+}
+.letter-content {
+  background: #fff;
+  border: 2px dashed #e74c3c;
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  overflow-y: auto;
+}
+.read-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+.photo-box img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.letter-box .border-text {
+  color: #e74c3c;
+  font-size: 0.9em;
+  margin: 8px 0;
+  text-align: center;
+}
 
-    
-    .puzzle-images {
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .original-image img {
-      width: 320px;
-      height: 320px;
-      object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #e74c3c;
-    }
-    #puzzle-board {
-      display: grid;
-      grid-template-columns: repeat(5, 64px);
-      grid-template-rows: repeat(5, 64px);
-      gap: 2px;
-      width: 320px;
-      height: 320px;
-      background: #ffe4e1;
-      border-radius: 10px;
-      border: 2px solid #e74c3c;
-      position: relative;
-    }
-    .puzzle-tile {
-      width: 64px;
-      height: 64px;
-      background-size: 320px 320px;
-      cursor: pointer;
-      box-sizing: border-box;
-      border: 1px solid #fff;
-      position: absolute;
-      transition: left 0.2s, top 0.2s;
-    }
-    .puzzle-tile.empty {
-      background: transparent;
-      border: none;
-      cursor: default;
-    }
+/* Special letter card styles */
+.special-letter-card {
+  background: var(--romantic-white);
+  border-radius: 20px;
+  box-shadow: var(--romantic-shadow);
+  padding: 40px 30px;
+  max-width: 400px;
+  text-align: center;
+  border: 2px solid var(--romantic-red);
+}
+.special-letter-content {
+  background: var(--romantic-pink);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  color: var(--romantic-red);
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(232, 76, 60, 0.08);
+}
+.read-only-label {
+  display: block;
+  font-size: 0.95em;
+  color: var(--romantic-gold);
+  margin-bottom: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Puzzle images styles */
+.puzzle-images {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.original-image img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #e74c3c;
+}
+#puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(5, 64px);
+  grid-template-rows: repeat(5, 64px);
+  gap: 2px;
+  width: 320px;
+  height: 320px;
+  background: #ffe4e1;
+  border-radius: 10px;
+  border: 2px solid #e74c3c;
+  position: relative;
+}
+.puzzle-tile {
+  width: 64px;
+  height: 64px;
+  background-size: 320px 320px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  position: absolute;
+  transition: left 0.2s, top 0.2s;
+}
+.puzzle-tile.empty {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  body,
+  html {
+    font-size: 0.9em;
+    /* Reduce overall font size */
+  }
+
+  .card {
+    width: 90%;
+    /* Make card wider */
+    max-width: 300px;
+    /* Limit maximum width */
+    padding: 20px 15px;
+    /* Reduce padding */
+  }
+
+  .keypad-3x4 {
+    gap: 8px;
+    /* Reduce gap between buttons */
+    margin-top: 12px;
+    /* Reduce margin */
+  }
+
+  .keypad-3x4 button {
+    padding: 12px 0;
+    /* Reduce button padding */
+    font-size: 1em;
+    /* Reduce font size */
+  }
+
+  #countdownDisplay {
+    font-size: 3rem;
+    /* Reduce countdown font size */
+    padding: 30px;
+    /* Reduce padding */
+  }
+
+  .greeting-card {
+    width: 90%;
+    /* Adjust card width */
+    max-width: 320px;
+    /* Limit maximum width */
+  }
+
+  .greeting-card .oval {
+    width: 200px;
+    /* Reduce oval width */
+    padding: 30px 15px;
+    /* Reduce padding */
+  }
+
+  .greeting-card .oval h1 {
+    font-size: 1.8em;
+    /* Reduce heading size */
+  }
+
+  .options-container {
+    flex-direction: column;
+    /* Stack options vertically */
+    align-items: center;
+    /* Center items */
+    gap: 20px;
+    /* Adjust gap */
+  }
+
+  .option {
+    width: 100px;
+    /* Reduce option width */
+    height: 140px;
+    /* Reduce option height */
+  }
+
+  .letter-container {
+    flex-direction: column;
+    /* Stack letter and photo vertically */
+    align-items: center;
+    /* Center items */
+    padding: 10px;
+    /* Reduce padding */
+  }
+
+  .letter-box,
+  .photo-box {
+    width: 100%;
+    /* Full width */
+    max-width: 90%;
+    /* Limit width */
+  }
+
+  .letter-box h2 {
+    font-size: 1.5em;
+    /* Reduce heading size */
+  }
+
+  .letter-content {
+    min-height: 200px;
+    /* Reduce minimum height */
+    padding: 15px;
+    /* Reduce padding */
+  }
+
+  .special-letter-card {
+    width: 90%;
+    /* Adjust card width */
+    max-width: 320px;
+    /* Limit maximum width */
+    padding: 30px 20px;
+    /* Reduce padding */
+  }
+
+  .puzzle-images {
+    flex-direction: column;
+    /* Stack images vertically */
+    align-items: center;
+    /* Center items */
+    gap: 20px;
+    /* Adjust gap */
+  }
+
+  .original-image img {
+    width: 240px;
+    /* Reduce image width */
+    height: 240px;
+    /* Reduce image height */
+  }
+
+  #puzzle-board {
+    grid-template-columns: repeat(5, 48px);
+    /* Adjust grid size */
+    grid-template-rows: repeat(5, 48px);
+    /* Adjust grid size */
+    width: 240px;
+    /* Reduce board width */
+    height: 240px;
+    /* Reduce board height */
+  }
+
+  .puzzle-tile {
+    width: 48px;
+    /* Reduce tile width */
+    height: 48px;
+    /* Reduce tile height */
+    background-size: 240px 240px;
+    /* Adjust background size */
+  }
+}
+
